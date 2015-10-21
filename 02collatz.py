@@ -21,7 +21,7 @@ def pickNumber():
 		try:
 			# Pick a number, remove commas, and convert to int.
 			number = int(input().replace(",", ""))
-			# Make sure it's less than 12 digits.
+			# Make sure it's no more than 12 digits.
 			if len(str(number)) < 13:
 				return number
 			else:
