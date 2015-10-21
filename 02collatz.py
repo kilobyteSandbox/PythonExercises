@@ -22,7 +22,7 @@ def pickNumber():
 			# Pick a number, remove commas, and convert to int.
 			number = int(input().replace(",", ""))
 			# Make sure it's less than 12 digits.
-			if len(str(number)) < 12:
+			if len(str(number)) < 13:
 				return number
 			else:
 				print("Sorry, try a number under 1,000,000,000,000.")
@@ -58,6 +58,7 @@ def collatz():
 		print(num)
 		counter += 1
 	# Print victory message and ask player if they want to try again.
+	print(" ")
 	print("Huzzah!  It only took " + str(counter) + " operations.  Would you like to " +\
 		"try again? (Yes / No)")
 	response = input()
