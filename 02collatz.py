@@ -39,7 +39,7 @@ def rerun(answer, function):
 		function()
 	else:
 		print("See you next time!")
-3423432
+
 
 # Run Collatz: Take number.  If 1, end.  If even, divide by 2.  If odd, multiply by 3 and add 1.
 # Print victory message, and ask if they'd like to try again.
