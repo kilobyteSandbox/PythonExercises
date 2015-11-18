@@ -49,9 +49,9 @@ def phone_collector(text):
         rawAreaCode = groups[1]
         rawExtension = groups[11]
         # Formatted area code, core phone number, and extension.
-        areaCode = "(" + groups[1] + ") "
+        areaCode = "(" + rawAreaCode + ") "
         coreNumber = "-".join([groups[4], groups[6]])
-        extension = "  ext. " + groups[11]
+        extension = "  ext. " + rawExtension
         # Only prints the () and ext. if an area code and/or extension
         # are found.
         # Both area code and extension.
@@ -71,7 +71,14 @@ def phone_collector(text):
     return phoneNumbers
 
 
-# def email_collector(text)
+# Collect email addresses.
+def email_collector(text):
+    emailAddresses = []
+    # Go through all the groups in the regext match object.
+    for groups in emailRegex.findall(text):
+        # Add to list of email addresses and return.
+        emailAddresses.append(groups)
+    return emailAddresses
 
 
 # Demonstration
@@ -79,3 +86,8 @@ print("Phone numbers found:")
 for i in phone_collector(text):
     print(i)
 
+print("\n")
+
+print("Email addresses found:")
+for i in email_collector(text):
+    print(i)
